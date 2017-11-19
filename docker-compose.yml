@@ -1,0 +1,20 @@
+nginx:
+ dockerfile: ./Dockerfile
+ build: ./contaners/nginx
+ ports:
+  - 80:80
+ volumes:
+  - ./logs:/etc/logs/nginx
+ volumes_from:
+  - fpm:rw
+ environment:
+  - NGINX_HOST=localhost
+  - NGINX_PORT=80
+ command: nginx -g "daemon off;"
+ links:
+  - fpm
+fpm:
+ dockerfile: ./Dockerfile
+ build: ./contaners/fpm
+ volumes:
+  - ./php-code:/var/www:rw

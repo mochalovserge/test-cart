@@ -1,0 +1,39 @@
+<style>
+    .square {
+        border: dashed #333333 1px;
+        width: 260px;
+        height: 260px;
+    }
+
+    .square-item {
+        border: solid #222222 1px;
+        float: left;
+
+        width: 50px;
+        height: 50px;
+    }
+
+    .on {
+        background: #6b9311;
+    }
+
+    .off {
+        background: #333333;
+    }
+</style>
+
+<div class="square">
+    <div class="square-item on" data-item-i="0" data-item-j="0">1</div>
+</div>
+
+<audio id="audio" src="/sounds/sound-01.mp3" autostart="false"></audio>
+<a onclick="playSound();"> Play</a>
+<script>
+    function playSound() {
+        var sound = document.getElementById("audio");
+        sound.play();
+    }
+
+    var audio = new Audio('/sounds/sound.mp3'); // define your audio
+    audio.play();
+</script>
