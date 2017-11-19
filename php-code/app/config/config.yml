@@ -91,3 +91,6 @@ fos_rest:
         view_response_listener: 'force'
         formats:
             json: true
+    exception:
+        enabled: true
+        exception_controller: 'AppBundle\Controller\ExceptionController::showAction'
